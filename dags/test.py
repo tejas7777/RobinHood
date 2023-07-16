@@ -6,7 +6,6 @@ default_args = {
     'owner': 'airflow',
     'start_date': datetime(2023, 7, 16),
     'retries': 1,
-    'retry_delay': timedelta(minutes=1),  # Adjust this as needed
 }
 
 
@@ -17,7 +16,7 @@ def print_hello():
 dag = DAG(
     dag_id="hello_airflow",
     description="Hello World Program in Airflow",
-    schedule_interval=timedelta(minuites=10),
+    schedule_interval=timedelta(minutes=10),
     start_date=datetime(2023, 7, 16),
     default_args= default_args
 )
