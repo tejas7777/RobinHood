@@ -14,7 +14,6 @@ def print_hello():
     return "Hello World from Airflow!"
 
 
-
 dag = DAG(
     dag_id="hello_airflow",
     description="Hello World Program in Airflow",
