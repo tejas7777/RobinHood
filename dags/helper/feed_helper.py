@@ -68,11 +68,11 @@ def load_feeds(url_set: list[bytes]) -> list[dict[str:any]]:
     final_data = []
 
     for url in url_list:
-        if not DATA_SOURCE_MAP_FETCHER[url] or not DATA_SOURCE_MAP_FETCHER[url]["fields"]:
+        if not DATA_SOURCE_MAP_FETCHER.get(url) or not DATA_SOURCE_MAP_FETCHER.get(url).get("fields") or not DATA_SOURCE_MAP_FETCHER.get(url).get("func"):
             continue
 
         fields = DATA_SOURCE_MAP_FETCHER[url]["fields"]
-        data = DATA_SOURCE_MAP_FETCHER[url](fields=fields)
+        data = DATA_SOURCE_MAP_FETCHER[url]["func"](fields=fields)
 
         if not data:
             continue
