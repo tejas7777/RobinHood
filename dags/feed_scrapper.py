@@ -10,11 +10,6 @@ from helper import feed_helper
 import json
 from config.logging_confg import logging
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s [%(levelname)s]: %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
 
 
 configuration: dict = {
